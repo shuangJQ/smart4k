@@ -6,10 +6,10 @@ package com.sjq.smart4k.utils;
  * <p>
  * Created by sjq on 16/3/2.
  */
-public final class CastUtils {
+public final class CastUtil {
 
     public static String castString(Object object) {
-        return CastUtils.castString(object, "");
+        return CastUtil.castString(object, "");
     }
 
     public static String castString(Object object, String defaultValue) {
@@ -17,7 +17,7 @@ public final class CastUtils {
     }
 
     public static double castDouble(Object object) {
-        return CastUtils.castDouble(object, 0.0);
+        return CastUtil.castDouble(object, 0.0);
     }
 
     public static double castDouble(Object object, Double defaultValue) {
@@ -36,7 +36,7 @@ public final class CastUtils {
     }
 
     public static long castLong(Object object) {
-        return CastUtils.castLong(object, 0);
+        return CastUtil.castLong(object, 0);
     }
 
     public static long castLong(Object object, long defaultValue) {
@@ -55,7 +55,7 @@ public final class CastUtils {
     }
 
     public static int castInt(Object object) {
-        return CastUtils.castInt(object, 0);
+        return CastUtil.castInt(object, 0);
     }
 
     public static int castInt(Object object, int defaultValue) {
@@ -74,7 +74,7 @@ public final class CastUtils {
     }
 
     public static boolean castBoolean(Object object) {
-        return CastUtils.castBoolean(object, false);
+        return CastUtil.castBoolean(object, false);
     }
 
     public static boolean castBoolean(Object object, boolean defaultValue) {

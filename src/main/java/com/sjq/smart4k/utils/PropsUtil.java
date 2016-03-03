@@ -11,8 +11,8 @@ import java.util.Properties;
 /**
  * Created by sjq on 16/3/2.
  */
-public final class PropsUtils {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PropsUtils.class);
+public final class PropsUtil {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PropsUtil.class);
 
     /**
      * load property file
@@ -93,7 +93,7 @@ public final class PropsUtils {
     public static int getInt(Properties props, String key, int defaultValue) {
         int value = defaultValue;
         if (props.containsKey(key)) {
-            //value = CastUtils.castInt(props.getProperty(key));
+            //value = CastUtil.castInt(props.getProperty(key));
         }
         return value;
     }
@@ -120,7 +120,7 @@ public final class PropsUtils {
     public static boolean getBoolean(Properties props, String key, boolean defaultValue) {
         boolean value = defaultValue;
         if (props.containsKey(key)) {
-            value = CastUtils.castBoolean(props.getProperty(key));
+            value = CastUtil.castBoolean(props.getProperty(key));
         }
         return value;
     }
