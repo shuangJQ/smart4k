@@ -7,7 +7,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * A Reflection Util Clas
+ * A Reflection Util Class
+ *
  * Created by sjq on 16/3/3.
  */
 public final class ReflectionUtil {

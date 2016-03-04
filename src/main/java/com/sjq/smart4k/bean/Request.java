@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 /**
  * Encapsulation information of request
  *
- * Created by user on 2016/3/4.
+ * Created by sjq on 2016/3/4.
  */
 public class Request {
 

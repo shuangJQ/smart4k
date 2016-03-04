@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 /**
  * Encapsulation information of Action
  *
- * Created by user on 2016/3/4.
+ * Created by sjq on 2016/3/4.
  */
 public class Handler {
 

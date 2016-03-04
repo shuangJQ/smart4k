@@ -3,7 +3,7 @@ package com.sjq.smart4k.utils;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
- * Created by user on 2016/3/4.
+ * Created by sjq on 2016/3/4.
  */
 public final class ArrayUtil {
     /**

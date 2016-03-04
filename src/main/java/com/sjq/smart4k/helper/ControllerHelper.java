@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by user on 2016/3/4.
+ * Controller Helper
+ *
+ * Created by sjq on 2016/3/4.
  */
 public final class ControllerHelper {
     /**

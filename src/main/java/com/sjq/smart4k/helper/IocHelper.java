@@ -10,7 +10,8 @@ import java.util.Map;
 
 /**
  * A Inversion of Control Class
- * Created by user on 2016/3/4.
+ *
+ * Created by sjq on 2016/3/4.
  */
 public final class IocHelper {
     static {
