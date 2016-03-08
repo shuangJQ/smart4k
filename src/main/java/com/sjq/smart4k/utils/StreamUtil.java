@@ -22,7 +22,7 @@ public final class StreamUtil {
                 sb.append(line);
             }
         } catch (Exception e) {
-            Logger.error("get String failre", e);
+            Logger.error("get String failure", e);
             throw new RuntimeException(e);
         }
         return sb.toString();
