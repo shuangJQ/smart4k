@@ -1,7 +1,9 @@
 package com.sjq.smart4k;
 
+import com.sjq.smart4k.bean.Data;
 import com.sjq.smart4k.bean.Handler;
 import com.sjq.smart4k.bean.Param;
+import com.sjq.smart4k.bean.View;
 import com.sjq.smart4k.helper.BeanHelper;
 import com.sjq.smart4k.helper.ConfigHelper;
 import com.sjq.smart4k.helper.ControllerHelper;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -80,6 +83,34 @@ public class DispatcherServlet extends HttpServlet {
             // Invoke Action method
             Method actionMethod = handler.getActionMethod();
             Object result = ReflectionUtil.invokeMethod(controllerBean, actionMethod, param);
+            // Deal with return value
+            if (result instanceof View) {
+                View view = (View) result;
+                String path = view.getPath();
+                if (StringUtil.isNotEmpty(path)) {
+                    if (path.startsWith("/")) {
+                        resp.sendRedirect(req.getContextPath() + path);
+                    } else {
+                        Map<String, Object> model = view.getModel();
+                        for (Map.Entry<String, Object> entry : model.entrySet()) {
+                            req.setAttribute(entry.getKey(), entry.getValue());
+                        }
+                        req.getRequestDispatcher(ConfigHelper.getProjectJspPath() + path).forward(req, resp);
+                    }
+                }
+            } else if (result instanceof Data) {
+                Data data = (Data) result;
+                Object model = data.getModel();
+                if (model != null) {
+                    resp.setContentType("application/json");
+                    resp.setCharacterEncoding("UTF-8");
+                    PrintWriter writer = resp.getWriter();
+                    String json = JsonUtil.toJson(model);
+                    writer.write(json);
+                    writer.flush();
+                    writer.close();
+                }
+            }
         }
 
     }
