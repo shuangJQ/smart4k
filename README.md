@@ -1,2 +1,3 @@
 # smart4k
-A simple Java Web Framework
+A repository for study [smart4j](http://git.oschina.net/huangyong/smart-framework)(A simple Java Web Framework)
+
